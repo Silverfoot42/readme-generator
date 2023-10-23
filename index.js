@@ -42,6 +42,16 @@ inquirer
       message: 'Select which license you want:',
       choices: ['MIT', 'GPLv2', 'Apache', 'GPLv3', 'BSD 3-clause', 'BSD 2-clause', 'LGPLv3', 'AGPLv3', 'Unlicensed'],
     },
+    {
+      type: 'input',
+      name: 'githubUserName',
+      message: 'Enter your Github username:',
+    },
+    {
+      type: 'input',
+      name: 'email',
+      message: 'Enter your email:',
+    },
   ])
   .then((answers) => {
     const markdownContent = generateMarkdown(answers);
@@ -50,11 +60,7 @@ inquirer
   });
 // TODO: Create a function to write README file
 function writeToFile(filename, data) {
-
+  fs.writeFile(filename, data, (err) => 
+    err ? console.log(err) : console.log('Successfully created README file')
+  );
 }
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
