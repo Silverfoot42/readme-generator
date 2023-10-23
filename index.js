@@ -36,10 +36,16 @@ inquirer
       name: 'test',
       message: 'Enter the test instructions:',
     },
+    {
+      type: 'list',
+      name: 'license',
+      message: 'Select which license you want:',
+      choices: ['MIT', 'GPLv2', 'Apache', 'GPLv3', 'BSD 3-clause', 'BSD 2-clause', 'LGPLv3', 'AGPLv3', 'Unlicensed'],
+    },
   ])
   .then((answers) => {
-    generateMarkdown();
-
+    const markdownContent = generateMarkdown(answers);
+    writeToFile('README.md', markdownContent);
     
   });
 // TODO: Create a function to write README file
