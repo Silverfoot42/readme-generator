@@ -1,20 +1,48 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
 function renderLicenseBadge(license) {
+  let licenseBadge = '';
+  
+  if (license != 'Unlicensed') {
+    licenseBadge = "![License Badge](https://img.shields.io/badge/license-" + license + "-brightgreen)"
+  }
 
+  return licenseBadge;
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {}
+function renderLicenseLink(license) {
+  let licenseLink = '';
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-function renderLicenseSection(license) {}
+  if (license === 'MIT') {
+    licenseLink = 'https://opensource.org/license/mit/';
+  } else if (license === 'GPLv2') {
+    licenseLink = 'https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html'
+  } else if (license === 'Apache') {
+    licenseLink = 'https://www.apache.org/licenses/LICENSE-2.0'
+  } else if (license === 'GPLv3') {
+    licenseLink = 'https://www.gnu.org/licenses/gpl-3.0.en.html'
+  } else if (license === 'BSD 3-clause') {
+    licenseLink = 'https://opensource.org/license/bsd-3-clause/'
+  } else if (license === 'BSD 2-clause') {
+    licenseLink = 'https://opensource.org/license/bsd-2-clause/'
+  } else if (license === 'LGPLv3') {
+    licenseLink = 'https://www.gnu.org/licenses/lgpl-3.0.en.html'
+  } else if (license === 'AGPLv3') {
+    licenseLink = 'https://www.gnu.org/licenses/agpl-3.0.en.html'
+  }
 
-// TODO: Create a function to generate markdown for README
+  return licenseLink;
+}
+
+function renderLicenseSection(license) {
+  if (license != 'Unlicensed') {
+    return `## License
+    
+  Link to the license used: 
+  ${renderLicenseLink(license)}`
+  }
+}
+
 function generateMarkdown(data) {
-  return `# ${data.title}
+  return `# ${data.title} ${renderLicenseBadge(data.license)}
 
   ## Description
 
@@ -29,27 +57,25 @@ function generateMarkdown(data) {
   - [Tests](#tests)
   - [Questions](#questions)
 
-  ##Installation
+  ## Installation
 
   ${data.instructions}
 
-  ##Usage
+  ## Usage
 
   ${data.information}
 
-  ##License
+  ${renderLicenseSection(data.license)}
 
-
-
-  ##Contributing
+  ## Contributing
 
   ${data.guidelines}
 
-  ##Tests
+  ## Tests
 
   ${data.test}
 
-  ##Questions
+  ## Questions
 
   If you have additional questions feel free to reach me using Github or by email.
 
