@@ -1,7 +1,9 @@
+// Sets dependencies
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
+// Creates the question prompts
 inquirer
   .prompt([
     {
@@ -57,6 +59,7 @@ inquirer
     
   });
 
+// Writes the answers to a read me file
 function writeToFile(filename, data) {
   fs.writeFile(filename, data, (err) => 
     err ? console.log(err) : console.log('Successfully created README file')

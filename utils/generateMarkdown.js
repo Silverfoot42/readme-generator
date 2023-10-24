@@ -1,3 +1,4 @@
+// Creates a badge for the license selected by the user
 function renderLicenseBadge(license) {
   let licenseBadge = '';
   
@@ -8,6 +9,7 @@ function renderLicenseBadge(license) {
   return licenseBadge;
 }
 
+// Creates link to a chosen license's website
 function renderLicenseLink(license) {
   let licenseLink = '';
 
@@ -32,6 +34,7 @@ function renderLicenseLink(license) {
   return licenseLink;
 }
 
+// renders license section if a license is chosen
 function renderLicenseSection(license) {
   if (license != 'Unlicensed') {
     return `## License
@@ -41,6 +44,7 @@ function renderLicenseSection(license) {
   }
 }
 
+//generates markdown based on the answers given
 function generateMarkdown(data) {
   return `# ${data.title} ${renderLicenseBadge(data.license)}
 
