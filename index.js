@@ -55,7 +55,7 @@ inquirer
   ])
   .then((answers) => {
     const markdownContent = generateMarkdown(answers);
-    writeToFile('README.md', markdownContent);
+    writeToFile('sampleREADME.md', markdownContent);
     
   });
 

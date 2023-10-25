@@ -1,40 +1,10 @@
-# gqerhtwethetrh 
+# README Generator
 
-  ## Description
+## Description
 
-  erhserherh
+An application for generating a README file based on user input and passing that user input into a template. The user will be asked various questions regarding the structure of the README file after which the answers will be put into a template and a README file will be created.
 
-  ## Table of Contents
+## Demo
 
-  - [Installation](#installation)
-  - [Usage](#usage)
-  - [License](#license)
-  - [Contributing](#contributing)
-  - [Tests](#tests)
-  - [Questions](#questions)
-
-  ## Installation
-
-  eherherh
-
-  ## Usage
-
-  esherrherh
-
-  undefined
-
-  ## Contributing
-
-  eheherheh
-
-  ## Tests
-
-  ehtaeheh
-
-  ## Questions
-
-  If you have additional questions feel free to reach me using Github or by email.
-
-  aerherh
-  aerhaerh
-
+Link to the demo through google drive: https://drive.google.com/file/d/1S_UGa2xDz8FRSEitjitkSUf8_kQ-Hkh2/view
+Video is also included in the repo files.
